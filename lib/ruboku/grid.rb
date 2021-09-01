@@ -11,7 +11,7 @@ module Ruboku
 
         size = Math.sqrt(array_of_arrays.count).to_i
         max_value = size * size
-        acceptable_values = (1..max_value).to_a
+        acceptable_values = (1..max_value).to_a + [ nil ]
 
         raise ArgumentError, 'Unexpected values' if array_of_arrays.flatten.any? { |value| !acceptable_values.include?(value) }
 
