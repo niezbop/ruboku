@@ -53,5 +53,9 @@ module Ruboku
     def each_row(&block)
       grid.each(&block)
     end
+
+    def ==(other)
+      self.to_a == other.to_a
+    end
   end
 end

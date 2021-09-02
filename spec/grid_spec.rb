@@ -83,4 +83,14 @@ RSpec.describe Ruboku::Grid do
       expect(Ruboku::Grid.new.grid).to all(have_attributes(count: 9))
     end
   end
+
+  describe '#to_a' do
+    it 'has the right number of elements' do
+      expect(Ruboku::Grid.new(3).to_a).to have_attributes(count: 81)
+    end
+
+    it 'lists elements in the right order' do
+      expect(simple_2x2.to_a).to match_array([1,2,3,4,3,4,1,2,2,3,4,1,4,1,2,3])
+    end
+  end
 end
